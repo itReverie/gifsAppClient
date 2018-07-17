@@ -12,11 +12,11 @@ import {webSocket} from '../config/';
     return (dispatch, getState, {emit}) => {
       if(favoriteGif.isFavorite){
         dispatch(addFavoriteGif(favoriteGif));
-        emit(webSocket.actions.ADD_FAVORITE_GIF, favoriteGif)
+        emit(webSocket.messages.ADD_FAVORITE_GIF, favoriteGif)
       }
       else{
         dispatch(removeFavoriteGif(favoriteGif));
-        emit(webSocket.actions.REMOVE_FAVORITE_GIF, favoriteGif);
+        emit(webSocket.messages.REMOVE_FAVORITE_GIF, favoriteGif);
       }
     };
   }

@@ -12,7 +12,7 @@ module.exports =function(){
             },
             webSocket:{
                     server: 'http://127.0.0.1:5000',
-                    actions: {
+                    messages: {
                              ADD_FAVORITE_GIF:"ADD_FAVORITE_GIF",
                              REMOVE_FAVORITE_GIF:"REMOVE_FAVORITE_GIF",
                              SET_FAVORITE_GIF:"SET_FAVORITE_GIF"
@@ -27,7 +27,7 @@ module.exports =function(){
         },
         webSocket:{
                 server: 'https://gifsappserver.herokuapp.com',
-                actions: {
+                messages: {
                          ADD_FAVORITE_GIF:"ADD_FAVORITE_GIF",
                          REMOVE_FAVORITE_GIF:"REMOVE_FAVORITE_GIF",
                          SET_FAVORITE_GIF:"SET_FAVORITE_GIF"
@@ -42,7 +42,7 @@ module.exports =function(){
             },
             webSocket:{
                     server: 'https://gifsappserver.herokuapp.com',
-                    actions: {
+                    messages: {
                              ADD_FAVORITE_GIF:"ADD_FAVORITE_GIF",
                              REMOVE_FAVORITE_GIF:"REMOVE_FAVORITE_GIF",
                              SET_FAVORITE_GIF:"SET_FAVORITE_GIF"

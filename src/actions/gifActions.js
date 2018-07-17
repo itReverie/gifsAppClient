@@ -18,7 +18,7 @@ export function loadGifs(searchTerm, numberOfResults=-1,offset=0){
 export function setFavorite(favoriteGif){
   return (dispatch, getState, {emit}) => {
       dispatch(setFavoriteGif(favoriteGif));
-      emit(webSocket.actions.SET_FAVORITE_GIF, favoriteGif);
+      emit(webSocket.messages.SET_FAVORITE_GIF, favoriteGif);
   };
 }
 
