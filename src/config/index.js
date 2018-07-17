@@ -11,7 +11,7 @@ module.exports =function(){
                    token:'GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw'
             },
             webSocket:{
-                    server: 'https://gifsappserver.herokuapp.com',
+                    server: 'http://127.0.0.1:5000',
                     actions: {
                              ADD_FAVORITE_GIF:"ADD_FAVORITE_GIF",
                              REMOVE_FAVORITE_GIF:"REMOVE_FAVORITE_GIF",
