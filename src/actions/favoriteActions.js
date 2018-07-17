@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import {messageTypes} from '../config/webSocket';
+import {webSocket} from '../config/';
 
 
   export function loadFavoriteGifs(){
@@ -12,11 +12,11 @@ import {messageTypes} from '../config/webSocket';
     return (dispatch, getState, {emit}) => {
       if(favoriteGif.isFavorite){
         dispatch(addFavoriteGif(favoriteGif));
-        emit(messageTypes.ADD_FAVORITE_GIF, favoriteGif)
+        emit(webSocket.actions.ADD_FAVORITE_GIF, favoriteGif)
       }
       else{
         dispatch(removeFavoriteGif(favoriteGif));
-        emit(messageTypes.REMOVE_FAVORITE_GIF, favoriteGif);
+        emit(webSocket.actions.REMOVE_FAVORITE_GIF, favoriteGif);
       }
     };
   }

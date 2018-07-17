@@ -1,12 +1,12 @@
 import giphyApi from './giphyApi';
-import configApi from '../config/api';
+import config from '../config/';
 import errors from '../utils/errors';
 
 describe.skip('✗ sending a wrong API request to the giphy API', () => {
 
   //'Initialize a valid configuration for the API'
   beforeEach(()=>{
-      giphyApi.config=Object.assign({},configApi);
+      giphyApi.config=Object.assign({},config);
   });
 
   it('should return an invalid request message when the api url is incorrect', async () => {
@@ -45,7 +45,7 @@ describe.skip('✓ sending a valid API request to the giphy API', () => {
 
     //'Initialize a valid configuration for the API'
     beforeEach(()=>{
-      giphyApi.config=Object.assign({},configApi);
+      giphyApi.config=Object.assign({},config);
     });
 
   it('should return default number of results and offset', async () => {
@@ -84,7 +84,7 @@ describe.skip('✓ sending a valid API request to the giphy API', () => {
 describe.skip('✓ normalizing api response object', () => {
   //'Initialize a valid configuration for the API'
   beforeEach(()=>{
-      giphyApi.config=Object.assign({},configApi);
+      giphyApi.config=Object.assign({},config);
   });
 
   it('should return a collection of giphy objects with the necesary properties', async () => {
@@ -105,7 +105,7 @@ describe.skip('✗ normalizing api is passing errors to the next layer', () => {
 
   //'Initialize a valid configuration for the API'
   beforeEach(()=>{
-    giphyApi.config=Object.assign({},configApi);
+    giphyApi.config=Object.assign({},config);
   });
 
   it('should return an error message for invalid api url', async () => {

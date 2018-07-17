@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 import giphyApi from '../api/giphyApi';
-import {messageTypes} from '../config/webSocket';
+import {webSocket} from '../config/';
 
 
 export function loadGifs(searchTerm, numberOfResults=-1,offset=0){
@@ -18,7 +18,7 @@ export function loadGifs(searchTerm, numberOfResults=-1,offset=0){
 export function setFavorite(favoriteGif){
   return (dispatch, getState, {emit}) => {
       dispatch(setFavoriteGif(favoriteGif));
-      emit(messageTypes.SET_FAVORITE_GIF, favoriteGif);
+      emit(webSocket.actions.SET_FAVORITE_GIF, favoriteGif);
   };
 }
 

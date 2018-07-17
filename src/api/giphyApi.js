@@ -1,10 +1,10 @@
-import configApi from '../config/api.js';
+import configApi from '../config/';
 import errors from '../utils/errors';
 import Giphy from '../model/giphy';
 
 const giphyApi ={
   
-  config: Object.assign({},configApi),
+  config: Object.assign({},configApi.giphy),
 
   requestSearch(searchTerm,numberOfResults=-1,offset=0){     
     //Validating data
@@ -13,7 +13,7 @@ const giphyApi ={
                           reject({message:errors.Validation.SearchTerm});
                           })
     }
-    let apiHost=`${this.config.giphy.endpoint}${this.config.giphy.token}&q=${searchTerm}`;
+    let apiHost=`${this.config.endpoint}${this.config.token}&q=${searchTerm}`;
     if(numberOfResults>-1){
         apiHost=`${apiHost}&limit=${numberOfResults}`;
     }
@@ -65,8 +65,8 @@ const giphyApi ={
       }
 
       return new Promise((resolve, reject) => {
-        this.requestFromFile()//NOTE: Helper to avoid calling the API while development. Sometimes you have a quota of requests so there is no need to call the API.
-        //this.requestSearch(searchTerm,numberOfResults,offset)
+        //this.requestFromFile()//NOTE: Helper to avoid calling the API while development. Sometimes you have a quota of requests so there is no need to call the API.
+        this.requestSearch(searchTerm,numberOfResults,offset)
         .then(result=> {
           let giphys={};
           //Normalizing and having our own object Giphy with just the data we need. 

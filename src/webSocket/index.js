@@ -1,11 +1,11 @@
 import io from 'socket.io-client'
-import {messageTypes, uri} from '../config/webSocket';
+import {webSocket} from '../config/';
 
-const socket = io(uri)
+const socket = io(webSocket.server)
 
 const init = (store) => {
   // add listeners to socket messages so we can re-dispatch them as actions
-  Object.keys(messageTypes)
+  Object.keys(webSocket.actions)
     .forEach(type => 
       socket.on(type, (favoriteGif) => store.dispatch({ type, favoriteGif })
     ))
