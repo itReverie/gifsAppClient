@@ -16,7 +16,7 @@ import {StyledLayout} from './primaryLayout.style';
 
   componentDidMount() {
     //Call the api if the list of gifs is empty otherwise get it from storage
-    if(this.props.gifslist===null)
+    if(!Object.keys(this.props.gifslist).length)
     {
       //TODO: If I have time add a smarter way to randomize that word.For example: load gifs based on a commemoration day.
       this.props.actions.loadGifs('smile');

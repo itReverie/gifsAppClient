@@ -1,6 +1,15 @@
 {
   "name": "myfavgifs",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "create-react-app client side for my favorite gifs web app.",
+  "keywords": [
+    "reactjs",
+    "redux",
+    "socket.io",
+    "styled-components"
+  ],
+  "author": "Brenda Jimenez",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "enzyme": "^3.3.0",
