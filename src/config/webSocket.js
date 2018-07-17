@@ -12,7 +12,7 @@ const messageTypes = [
 // console.log('PORT',process.env.PORT);
 // const port = process.env.PORT || 5000
 // const host = '127.0.0.1'
-const uri= `https://gifsappserver.herokuapp.com/`;//http://${host}:${port}`;
+const uri= `https://gifsappserver.herokuapp.com`;//http://${host}:${port}`;
 console.log('websocket:',uri);
 
 module.exports ={
