@@ -21,6 +21,7 @@ import {webSocket} from '../config/';
     };
   }
 
+  
   //NOTE: This methods make easier to test reducers and clearly see the different dispachers.
   export function loadFavoritesSuccess(){
     return {type : types.LOAD_FAVORITE_GIFS_SUCCESS};

@@ -3,12 +3,17 @@ import * as types from "./actionTypes";
 import initialState from '../reducers/initialState';
 import gif from '../mocks/gif';
 import thunk from 'redux-thunk';
+//NOTE. redux-mock-store is being used to mock the store
 import configureMockStore from 'redux-mock-store';
+import { init as websocketInit, emit , getMessages  }  from '../webSocket/';
+import {webSocket} from '../config/';
 
-const middleware = [thunk];
+//STORE
+const middleware = [thunk.withExtraArgument({ emit })];
 const mockStore = configureMockStore(middleware);
+let store;
 
-describe('✓ load favorite gifs action', ()=>{
+describe('✓ loading favorite gifs action', ()=>{
     const expectedAction = { type: types.LOAD_FAVORITE_GIFS_SUCCESS};
 
     it('should dispatch LOAD_FAVORITE_GIFS_SUCCESS', ()=>{
@@ -25,41 +30,54 @@ describe('✓ load favorite gifs action', ()=>{
     })
 })
 
-describe("✓ setting a favorite gif action",  () => {
-    it(" when isFavorite=true should dispatch SET_FAVORITE_GIF and ADD_FAVORITE_GIF ", () => {
+describe("✓ adding and removing a favorite gif action",  () => {
 
+    beforeEach(() => {
+        store = mockStore();
+        websocketInit( store );
+      });
+
+    it("should dispatch and emit ADD_FAVORITE_GIF when isFavorite=true ", () => {
+        //Initializing 
         const favoriteGif={ gif: {[gif.id]:gif} ,isFavorite:true};
+        const message= webSocket.messages.ADD_FAVORITE_GIF;
 
-        const expectedActionAdd = { type: types.ADD_FAVORITE_GIF, 
-                                    gif: {[gif.id]:gif} };
+        //Expected results
+        const expectedEmitAdd = [message,favoriteGif];
+        const expectedActionAdd = { type: types.ADD_FAVORITE_GIF, favoriteGif };
 
-        const store = mockStore(initialState.favorites,{...expectedActionAdd,...expectedActionSetFavorite});
+        //Action
         store.dispatch(favoriteActions.addFavorite(favoriteGif))
         const actions = store.getActions();
 
-        expect.assertions(3);
-        expect(actions.length).toEqual(2);
+        //Asserts
+        expect.assertions(4);
+        expect( getMessages() ).toEqual( expectedEmitAdd );
+        expect(actions.length).toEqual(1);
         expect(actions[0].type).toEqual(types.ADD_FAVORITE_GIF);
         expect(actions[0]).toEqual(expectedActionAdd);
 
     });
-    it(" when isFavorite=false should dispatch SET_FAVORITE_GIF and REMOVE_FAVORITE_GIF ", () => {
 
+    it("should dispatch and emit REMOVE_FAVORITE_GIF when isFavorite=false ", () => {
+        //Initializing
         const favoriteGif={ gif: {[gif.id]:gif} ,isFavorite:false};
+        const message= webSocket.messages.REMOVE_FAVORITE_GIF;
 
-        const expectedActionRemove = { type: types.REMOVE_FAVORITE_GIF, 
-                                       gifId: gif.id };
-        const expectedActionSetFavorite = { type: types.SET_FAVORITE_GIF, 
-                                            favoriteGif: favoriteGif};
+        //Expected results
+        const expectedEmitAdd = [message,favoriteGif];
+        const expectedActionRemove = { type: types.REMOVE_FAVORITE_GIF, favoriteGif};
 
-        const store = mockStore(initialState.favorites,{...expectedActionRemove,...expectedActionSetFavorite});
-        store.dispatch(favoriteActions.setFavorite(favoriteGif))
+        //Action
+        store.dispatch(favoriteActions.addFavorite(favoriteGif))
         const actions = store.getActions();
 
+        //Asserts
         expect.assertions(4);
-        expect(actions.length).toEqual(2);
-        expect(actions[0].type).toEqual(types.SET_FAVORITE_GIF);
-        expect(actions[0]).toEqual(expectedActionSetFavorite);
-        expect(actions[1].type).toEqual(types.REMOVE_FAVORITE_GIF);
+        expect( getMessages() ).toEqual( expectedEmitAdd );
+        expect(actions.length).toEqual(1);
+        expect(actions[0].type).toEqual(types.REMOVE_FAVORITE_GIF);
+        expect(actions[0]).toEqual(expectedActionRemove);
     });
+
 });

@@ -13,11 +13,13 @@ describe('displaying a loader for an image', ()=>{
     });
 
     it('renders a search box without crashing', () => {
+      let success=jest.fn();
+      let failure=jest.fn();
       shallow(<LoaderImage component={onSearch} 
                            imageUrl=''
                            seconds='1000'
-                           success={}
-                           failure={}/>);
+                           success
+                           failure />);
     });
 
 
