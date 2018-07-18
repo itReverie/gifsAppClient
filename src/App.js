@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PrimaryLayout from './layouts/primaryLayout.js';
 import {LoaderStyled} from './App.style';
 
-
 export default class App extends Component{
 
     constructor(props) {

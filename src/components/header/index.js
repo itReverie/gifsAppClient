@@ -4,7 +4,7 @@ import { StyledFavoritesBox, StyledIconHome, StyledIconBack } from './header.sty
 import Favorites from '../favorites/';
 import home from '../../images/icons/home.svg';
 import back from '../../images/icons/back.svg';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Header = (props) =>{
         return (<StyledFavoritesBox >

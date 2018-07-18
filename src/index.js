@@ -7,16 +7,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 import colors from './styles/colors';
-
+import {LoaderStyled} from './App.style';
 
 const reduxStore=configureStore();
-
 
 const render = () => {
 ReactDOM.render(
         <ThemeProvider theme={colors}>
                 <Provider store={reduxStore.store}>
-                    <PersistGate persistor={reduxStore.persistor}>
+                    <PersistGate loading={<LoaderStyled />}  persistor={reduxStore.persistor}>
                         <App />
                     </PersistGate>
                 </Provider>
