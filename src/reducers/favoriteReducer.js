@@ -9,12 +9,11 @@ export default function favoriteReducer(state = initialState.favorites, action) 
     case types.ADD_FAVORITE_GIF:
           const gifId=action.favoriteGif.gif.id;
           const isfavorite=action.favoriteGif.isFavorite;
-          const currentGif= action.favoriteGif.gif;//state[gifId];
+          const currentGif= action.favoriteGif.gif;
           const updateGif = (currentGif) => Object.assign({}, 
                                                           currentGif, 
                                                           {isFavorite:isfavorite});
           return {...state, [gifId] : updateGif(currentGif) };
-          //return {...state,[action.gif.id] : Object.assign({},action.gif)};
     case types.REMOVE_FAVORITE_GIF:
           const gifIdToRemove=action.favoriteGif.gif.id; 
          
@@ -23,15 +22,6 @@ export default function favoriteReducer(state = initialState.favorites, action) 
                        .reduce((result, current) => {
                               result[current] = state[current];
                               return result;}, {});
-    case types.SET_FAVORITE_GIF:
-      //     const gifId=action.favoriteGif.gif.id;
-      //     const isfavorite=action.favoriteGif.isFavorite;
-      //     const currentGif= state[gifId];
-      //     const updateGif = (currentGif) => Object.assign({}, 
-      //                                                     currentGif, 
-      //                                                     {isFavorite:isfavorite});
-      //    return {...state, [gifId] : updateGif(currentGif) };
-      return state;
     default:
           return state;
   }
