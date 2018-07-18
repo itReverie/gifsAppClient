@@ -65,8 +65,8 @@ const giphyApi ={
       }
 
       return new Promise((resolve, reject) => {
-        this.requestFromFile()//NOTE: Helper to avoid calling the API while development. Sometimes you have a quota of requests so there is no need to call the API.
-        //this.requestSearch(searchTerm,numberOfResults,offset)
+        //this.requestFromFile()//NOTE: Helper to avoid calling the API while development. Sometimes you have a quota of requests so there is no need to call the API.
+        this.requestSearch(searchTerm,numberOfResults,offset)
         .then(result=> {
           let giphys={};
           //Normalizing and having our own object Giphy with just the data we need. 
