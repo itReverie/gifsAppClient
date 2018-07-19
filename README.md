@@ -64,4 +64,4 @@ The application was deployed in Heroku on:
 
 I left the test files intentionally at the same level of the classes as it was easier for me to visualize the classes that have tests. I am aware that most people prefer to have a ```_test_``` folder under components. I am happy to adapt to any other practices.
 
-<img src="https://www.itreverie.com/githubimages/itR-react-gifsAppClient.gif" width="200px"/>
+<img src="https://www.itreverie.com/githubimages/itR-react-gifsAppClient.gif"/>
