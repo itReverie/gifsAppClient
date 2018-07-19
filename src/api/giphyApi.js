@@ -42,19 +42,8 @@ const giphyApi ={
     });
   },
 
-  requestFromFile(){
-          return new Promise((resolve, reject) => {
-          fetch('./data.json')
-            .then(result=> {
-                resolve(result.json());
-            })
-            .catch(error => {
-              reject([])});
-          });
-  },
-
   //The main point of this function is to normalize the data and make the gif object simpler to avoid big object with unnecesary data.
-  //Sometimes is better not to touch the API data but considering in this case we want to normalize it and make it simple we will transform the data.
+  //Sometimes is better not to touch the API data but in this case it will be normalized.
   searchGiphys(searchTerm,numberOfResults=-1,offset=0){
 
       //Validating data
@@ -65,8 +54,7 @@ const giphyApi ={
       }
 
       return new Promise((resolve, reject) => {
-        this.requestFromFile()//NOTE: Helper to avoid calling the API while development. Sometimes you have a quota of requests so there is no need to call the API.
-        //this.requestSearch(searchTerm,numberOfResults,offset)
+        this.requestSearch(searchTerm,numberOfResults,offset)
         .then(result=> {
           let giphys={};
           //Normalizing and having our own object Giphy with just the data we need. 

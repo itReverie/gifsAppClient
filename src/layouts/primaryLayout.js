@@ -11,7 +11,7 @@ import FavoritePage from '../pages/favoritePage';
 import Footer from '../components/footer/';
 import {StyledLayout} from './primaryLayout.style';
 
-
+//Note. In a bigger application it might be better to separate this components.
  class PrimaryLayout extends Component {
 
   componentDidMount() {
@@ -44,11 +44,11 @@ import {StyledLayout} from './primaryLayout.style';
   }
 
   render() {
-        const gifPage=<GifPage gifslist={this.props.gifslist}
-                                      onAddFavorite={this.onAddFavorite}
-                                      onSearch={this.onSearch}
-                                      error={this.props.error}
-                                      onUpdateError={this.onUpdateError} />;
+        const gifPage=<GifPage id="gifPage" gifslist={this.props.gifslist}
+                               onAddFavorite={this.onAddFavorite}
+                               onSearch={this.onSearch}
+                               error={this.props.error}
+                               onUpdateError={this.onUpdateError} />;
         const favoritePage=<FavoritePage favoriteGifs={this.props.favoriteGifs}
                                             onAddFavorite={this.onAddFavorite} />;
         return (<StyledLayout>

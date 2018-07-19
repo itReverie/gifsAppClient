@@ -38,3 +38,11 @@ You can modify the url to the Giphy api and other settings on the *src/config/in
 The application was deployed in Heroku on:
 
 https://gifsappclient.herokuapp.com/
+
+#### Some notes
+
+I left the test files intentionally at the same level of the classes as it was easier for me to visualize the classes that have tests. I am aware that most people prefer to have a ```_test_``` folder under components. I am happy to adapt to any other practices.
+
+
+
+

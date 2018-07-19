@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering correctly a list of favorite gifs page via snapshot 1`] = `
+<div
+  className="sc-gZMcBi ktHDkb"
+>
+  <div
+    className="sc-bwzfXH hDAGxY"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-htpNat gCTdIZ"
+        src="home.svg"
+      />
+    </a>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-bxivhb ffNsIf"
+        src="back.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="sc-iwsKbI crUSs"
+  >
+    <div
+      className="sc-gzVnrw hIFWtz"
+    >
+      <div
+        className="sc-htoDjs kvMyWV"
+      >
+        <img
+          alt="loading"
+          src="imgLoader.png"
+        />
+      </div>
+      <div
+        className="sc-bZQynM gJELVL"
+      >
+        <img
+          alt="Add to favorites"
+          className="sc-dnqmqq iKkpJI"
+          onClick={[Function]}
+          src="starActive.svg"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-gzVnrw hIFWtz"
+    >
+      <div
+        className="sc-htoDjs kvMyWV"
+      >
+        <img
+          alt="loading"
+          src="imgLoader.png"
+        />
+      </div>
+      <div
+        className="sc-bZQynM gJELVL"
+      >
+        <img
+          alt="Add to favorites"
+          className="sc-dnqmqq iKkpJI"
+          onClick={[Function]}
+          src="starActive.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

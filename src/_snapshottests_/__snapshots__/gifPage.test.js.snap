@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering correctly a Gifs page via snapshot 1`] = `
+<div
+  className="sc-fjdhpX koYQtA"
+>
+  <div
+    className="sc-iwsKbI gVQksL"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-gZMcBi eEyyxI"
+        src="home.svg"
+      />
+    </a>
+    <div
+      className="sc-VigVT dBjWVv"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-jTzLTM iFlxTk"
+        src="favorites.svg"
+      />
+      <div>
+        My Favorite Gifs
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-jzJRlG cQirNv"
+  >
+    <div
+      className="sc-bdVaJa ePiAyJ"
+    >
+      <div
+        className="sc-bwzfXH hORBRg"
+      >
+        <input
+          className="sc-htpNat iFKLan"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          placeholder="Search a gif"
+          type="search"
+        />
+        <div
+          className="sc-bxivhb gXODYk"
+          id="btnSearch"
+          onClick={[Function]}
+        >
+          <span
+            className="textButton"
+          >
+            Search
+          </span>
+          <span
+            className="material-icons"
+          >
+            search
+          </span>
+        </div>
+      </div>
+      <div
+        className="sc-ifAKCX eERJos"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-dnqmqq ddIfsJ"
+  >
+    <div
+      className="sc-bZQynM ilGifo"
+    >
+      <div
+        className="sc-gzVnrw eHxNMw"
+      >
+        <img
+          alt="loading"
+          src="imgLoader.png"
+        />
+      </div>
+      <div
+        className="sc-EHOje jhQAeQ"
+      >
+        <img
+          alt="Add to favorites"
+          className="sc-htoDjs efxPqf"
+          onClick={[Function]}
+          src="starActive.svg"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-bZQynM ilGifo"
+    >
+      <div
+        className="sc-gzVnrw eHxNMw"
+      >
+        <img
+          alt="loading"
+          src="imgLoader.png"
+        />
+      </div>
+      <div
+        className="sc-EHOje jhQAeQ"
+      >
+        <img
+          alt="Add to favorites"
+          className="sc-htoDjs efxPqf"
+          onClick={[Function]}
+          src="starActive.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

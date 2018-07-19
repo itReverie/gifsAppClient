@@ -11,7 +11,6 @@ import {LoaderStyled} from './App.style';
 
 const reduxStore=configureStore();
 
-const render = () => {
 ReactDOM.render(
         <ThemeProvider theme={colors}>
                 <Provider store={reduxStore.store}>
@@ -22,6 +21,3 @@ ReactDOM.render(
          </ThemeProvider>,
         document.getElementById('root'));
         registerServiceWorker();
-}
-
-render()
