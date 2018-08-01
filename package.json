@@ -28,7 +28,9 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-viewport": "^4.0.0-alpha.14",
+    "@storybook/react": "^4.0.0-alpha.14",
     "babel-core": "^6.26.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

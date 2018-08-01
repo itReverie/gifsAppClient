@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import SearchInput from '../src/components/searchInput';
 import Star from '../src/components/star';
 
-storiesOf('SearchInput', module)
+storiesOf('Components', module)
   .add('Search', () => (
     <SearchInput onClick={action('clicked')} />
   ))
