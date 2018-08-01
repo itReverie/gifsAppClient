@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-knobs": "^3.4.8",
     "@storybook/addon-viewport": "^4.0.0-alpha.14",
     "@storybook/react": "^4.0.0-alpha.14",
     "babel-core": "^6.26.3",
