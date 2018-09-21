@@ -19,6 +19,8 @@ export const StyledGifCard= styled.div`
 export const StyledDivImage= styled.div`
                     margin:10px 10px 5px 10px;
                     min-width:200px;
+                    max-width:200px;
                     min-height:180px;
+                    max-height:180px;
                     ${media.tablet`min-width: 250px; min-height: 150px`}
                     `;  
